@@ -67,3 +67,61 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: test@test.com
+        sender_name: Test
+
+easy_admin:
+    site_name: 'Admin Paneli'
+    entities:
+        Category:
+            class: AppBundle\Entity\Category
+            label: "Kategoriler"
+            list:
+                title: "Kategoriler"
+                fields:
+
+                    - { property: 'title', label: 'Kategori Başlığı' }
+                    - {property: 'makaleler'}
+            form:
+                title: "Kategori Ekle"
+                fields:
+                    - { property: 'title', label: 'Kategori Başlığı' }
+
+        Article:
+            class: AppBundle\Entity\Article
+            label: "Yazılar"
+            list:
+                title: "Yazılar"
+                fields:
+                - { property: 'title', label: 'Başlık' }
+                - { property: 'category', label: 'Kategori' }
+
+            form:
+                title: "Yazı Ekle"
+                fields:
+                    - { property: 'title', label: 'Başlık' }
+                    - { property: 'content', label: 'İçerik' }
+                    - { property: 'category', label: 'Kategori' }
+
+        User:
+            class: AppBundle\Entity\User
+            label: "Kullanıcılar"
+            list:
+                title: "Kullanıcılar"
+                fields:
+                    - { property: 'username',label: 'Kullanıcı adı' }
+                    - { property: 'email', type: 'email', label: 'E-mail adresi' }
+                    - { property: 'enabled', label: 'Aktif mi?', type: 'toggle'}
+            form:
+                title: "Kullanıcı Ekle"
+                fields:
+                    - { property: 'username',label: 'Kullanıcı adı' }
+                    - { property: 'email', type: 'email', label: 'E-mail adresi' }
+                    - { property: 'plainPassword', type: 'password',label: 'Parola' }
+                    - { property: 'enabled', label: 'Aktif mi?'}
