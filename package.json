@@ -1,0 +1,21 @@
+{
+  "name": "symfony-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/oytunyuksel/symfony-blog.git",
+  "author": "oytunyuksel <oytun@tosih.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-less": "^3.3.2",
+    "gulp-uglify": "^3.0.0"
+  }
+}

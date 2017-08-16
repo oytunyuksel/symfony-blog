@@ -40,7 +40,12 @@
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~
 
+composer.lock
+yarn.lock
 /.idea
 /vendor
 /node_modules
-composer.lock
+/web/js
+/web/css
+/web/img
+/web/fonts
