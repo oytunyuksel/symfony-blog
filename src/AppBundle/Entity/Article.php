@@ -2,6 +2,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Articles
@@ -14,7 +15,7 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="baslik", type="string", length=250, nullable=false)
+     * @ORM\Column(name="title", type="string", length=250, nullable=false)
      */
     private $title = '';
 
@@ -41,8 +42,29 @@ class Article
     private $category;
 
     /**
+     * @var string
+     *
+     * @Gedmo\Slug(fields={"title","id"})
+     * @ORM\Column(length=128, unique=true)
+     */
+    private $slug;
+
+    /**
      * @return string
      */
+
+    /**
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
     public function __toString()
     {
         return $this->getTitle();
@@ -129,5 +151,42 @@ class Article
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+
+    public function getSlug(){
+        return $this->slug;
+    }
+
+    /**
+     * Set slug
+     *
+     * @return string
+     */
+
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }

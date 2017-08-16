@@ -125,3 +125,9 @@ easy_admin:
                     - { property: 'email', type: 'email', label: 'E-mail adresi' }
                     - { property: 'plainPassword', type: 'password',label: 'Parola' }
                     - { property: 'enabled', label: 'Aktif mi?'}
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable:   true
+            timestampable: true
