@@ -36,11 +36,7 @@ gulp.task('bootstrap:scripts', function(){
 });
 
 gulp.task('bootstrap:styles', function() {
-    gulp.src('./node_modules/bootstrap/less/**/*.less')
-        .pipe(less())
-        .pipe(autoprefixer('last 2 versions', 'ie 8', 'ie 9'))
-        .pipe(cleancss({compatibility: 'ie11'}))
-        .pipe(concat('bootstrap.css'))
+    gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css')
         .pipe(gulp.dest('./web/css/'))
 });
 
