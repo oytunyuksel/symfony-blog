@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Response;
 class ArticleController extends Controller
 {
     /**
-     * @Route("/articles/{slug}")
+     * @Route("/articles/{slug}", name="article_show")
      */
     public function showAction($slug){
 
@@ -25,10 +25,14 @@ class ArticleController extends Controller
         $article = $em->getRepository('AppBundle:Article')
             ->findOneBy(array('slug' => $slug));
 
+        $categories = $em->getRepository('AppBundle:Category')
+            ->findAll();
+
         $templating = $this->container->get('templating');
 
         $html = $templating->render('articles/show.html.twig',[
-            'article' => $article
+            'article' => $article,
+            'categories' => $categories
         ]);
 
         return new Response($html);

@@ -18,10 +18,14 @@ class DefaultController extends Controller
         $articles = $em->getRepository('AppBundle:Article')
             ->findAll();
 
+        $categories = $em->getRepository('AppBundle:Category')
+            ->findAll();
+
         $templating = $this->container->get('templating');
 
         $html = $templating->render('default/index.html.twig',[
-            'articles' => $articles
+            'articles' => $articles,
+            'categories' => $categories
         ]);
 
         return new Response($html);
