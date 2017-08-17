@@ -2,13 +2,15 @@
 
 ### Symfony kurulumu
 
-app/config/parameters.yml dosyası ayarlanmalı
+`git clone https://github.com/oytunyuksel/symfony-blog.git` komutu ile repo indirilir
 
-`php bin/console doctrine:database:create` komutu ile database kurulumu yapılmalı
+app/config/parameters.yml dosyası ayarlanır
+
+`php bin/console doctrine:database:create` komutu ile database kurulumu yapılır
 
 `composer install` ile php kütüphaneleri yüklenir
 
-`php bin/console doctrine:schema:create` komutu ile database tarafındaki yapı oluşturulmalı
+`php bin/console doctrine:schema:create` komutu ile database tarafındaki yapı oluşturulur
 
 `php bin/console fos:user:create admin admin@admin.com admin` komutu ile admin kullanıcısı oluşturulur
 
@@ -22,7 +24,7 @@ app/config/parameters.yml dosyası ayarlanmalı
 
 `gulp` komutu ile frontend dosyaları için gerekli işlemler yapılır
 
-Eğer gulp veya yarn yok ise `npm install -g gulp` ve `npm install -g yarn` komutları ile yüklenebilir.
+Eğer **gulp** veya **yarn** yok ise `npm install -g gulp` ve `npm install -g yarn` komutları ile yüklenebilir
 
 ### Final
 
