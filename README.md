@@ -4,11 +4,11 @@
 
 `git clone https://github.com/oytunyuksel/symfony-blog.git` komutu ile repo indirilir
 
+`composer install` ile php kütüphaneleri yüklenir
+
 app/config/parameters.yml dosyası ayarlanır
 
 `php bin/console doctrine:database:create` komutu ile database kurulumu yapılır
-
-`composer install` ile php kütüphaneleri yüklenir
 
 `php bin/console doctrine:schema:create` komutu ile database tarafındaki yapı oluşturulur
 
