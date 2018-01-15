@@ -14,7 +14,7 @@
 
 ### Frontend kurulumu
 
-`yarn` ile frontent kütüphaneleri ve gulp yüklenir
+`yarn` ile frontend kütüphaneleri ve gulp yüklenir
 
 `gulp` komutu ile frontend dosyaları için gerekli işlemler yapılır
 
